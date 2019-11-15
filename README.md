@@ -47,7 +47,7 @@ const router = new VueRouter({
 <router-view></router-view>
 ```
 ## router.push()
-**換網址(不重整)**  
+**換網址(前端的router-link其實就是調用這個方法)**  
 in other components use  
 ```
 this.$router.push('pathname');
@@ -76,9 +76,7 @@ template
 ```{{ $route.query.a }}```
 
 other components  
-```
-this.$route.query.a
-```
+```this.$route.query.a```
 
 ## children
 **可以建立網址間的父子關係**  
