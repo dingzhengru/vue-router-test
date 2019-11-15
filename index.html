@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+
+    <style>
+        @import url("public/min/css/test.css")
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>Hello App!</h1>
+        <!-- use router-link component for navigation. -->
+        <!-- specify the link by passing the `to` prop. -->
+        <!-- `<router-link>` will be rendered as an `<a>` tag by default -->
+        <p><router-link to="/foo">Go to Foo</router-link></p>
+        <p><router-link to="/bar">Go to Bar</router-link></p>
+        <p><router-link to="/user/123">Go to User id:123</router-link></p>
+        <p><router-link :to="{ name: 'userHome', params: { id: 123 }}">Go to User id:123</router-link></p>
+        <p><router-link to="/user/123/profile">Go to UserProfile id:123</router-link></p>
+
+        <!-- route outlet -->
+        <!-- component matched by the route will render here -->
+        <router-view></router-view>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/3.1.3/vue-router.min.js"></script>
+
+    <!-- read_file.js 是我為了import html檔案才另外寫的(有用到jquery語法) -->
+    <script src="public/js/read_file.js"></script>
+    <script src="public/min/js/router.js"></script>
+
+    <script>
+        
+    </script>
+</body>
+</html>
