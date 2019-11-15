@@ -4,9 +4,9 @@
 *  <a href="#history-mode">History Mode</a>
 *  <a href="#router-link">router-link</a>
 *  <a href="#router-view">router-view</a>
-*  <a href="#router-push">router.push()</a>
-*  <a href="#$route.params">$route.params</a>
-*  <a href="#$route.query">$route.query</a>
+*  <a href="#routerpush">router.push()</a>
+*  <a href="#routeparams">$route.params</a>
+*  <a href="#routequery">$route.query</a>
 *  <a href="#children">children</a>
 
 ## Base
