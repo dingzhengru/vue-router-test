@@ -50,8 +50,17 @@ const router = new VueRouter({
 **換網址(前端的router-link其實就是調用這個方法)**  
 in other components use  
 ```
-this.$router.push('pathname');
-this.$router.push('path/to/foo');
+// path
+router.push('home') // /home
+
+// object
+router.push({ path: 'home' }) // /home
+
+// object by name & send params
+router.push({ name: 'user', params: { userId: '123' }})
+
+// object by path & send query (/register?plan=private)
+router.push({ path: 'register', query: { plan: 'private' }})
 ```
 
 ##  $route.params
