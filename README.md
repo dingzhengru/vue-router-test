@@ -1,14 +1,15 @@
 # Vue-router
 
-*  <a href="basic">Basic</a>
+*  <a href="basic">Base</a>
 *  <a href="history-mode">History Mode</a>
 *  <a href="router-link">router-link</a>
 *  <a href="router-view">router-view</a>
 *  <a href="router-push">router.push()</a>
 *  <a href="$route.params">$route.params</a>
+*  <a href="$route.query">$route.query</a>
 *  <a href="children">children</a>
 
-## Basic
+## Base
 ```
 const Foo = { template: `<h1>Foo</h1>` };
 
@@ -25,7 +26,13 @@ const app = new Vue({ router }).$mount('#app');
 ```
 
 ## History Mode
-
+**取消網址上的#號，改用完整網址呈現**
+```
+const router = new VueRouter({ 
+    mode: 'history',
+    routes 
+});
+```
 
 ## router-link
 **前端顯示連結的標籤**
@@ -60,14 +67,25 @@ template
 ```{{ $route.params.id }}```
 
 other components  
+```this.$route.params.id```
+
+##  $route.query
+**跟上面不同的是，這是取網址最後面放這種的 ?a=1&b=2**  
+
+template  
+```{{ $route.query.a }}```
+
+other components  
 ```
-this.$route.params.id
+this.$route.query.a
 ```
 
-##  
+## children
+**可以建立網址間的父子關係**  
 
 ```
-// /user/:id/profile, /user/:id/posts
+// UserHome: /user/:id
+// UserProfile: /user/:id/profile
 { 
     path: '/user/:id', component: User,
     children: [
@@ -78,12 +96,21 @@ this.$route.params.id
         },
         {
             path: 'profile',
+            name: 'userProfile',
             component: UserProfile
-        },
-        {
-            path: 'posts',
-            component: UserPosts
         }
     ]
 }
 ```
+User.template  
+```
+<div>
+    <h1>User {{ $route.params.id }}</h1>
+    <router-view></router-view>
+</div>
+```
+UserHome.template(會顯示在User.template的router-view中)  
+```<h2>UserHome</h2>```  
+
+UserProfile.template(會顯示在User.template的router-view中)  
+```<h2>UserProfile</h2>```  
