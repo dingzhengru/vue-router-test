@@ -61,6 +61,9 @@ router.push({ name: 'user', params: { userId: '123' }})
 
 // object by path & send query (/register?plan=private)
 router.push({ path: 'register', query: { plan: 'private' }})
+
+// in .vue script
+this.$router.push()
 ```
 
 ##  $route.params
